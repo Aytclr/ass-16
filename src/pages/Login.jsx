@@ -14,6 +14,12 @@ const Login = () => {
         <h3 className="font-montserrat font-600 text-[22px]">SING IN</h3>
         <h6 className="font-montserrat text-labelColor texy-label mt-1">Enter your credetentials to access your account</h6>
       </div>
+      <form className="flex flex-col text-left p-3 gp-5" >
+        <div className="flex flex-col gap-2">
+          <label className="font-montserrat text-label text-labelColor hover:after:content-['admin@aa.com'] hover:after:text-black hover:after pl-3 hover:after: underline hover:after:cursor-pointer " htmlFor="">Email</label>
+          <input className="login-input" type="Email" />
+        </div>
+      </form>
       </div>
     </div>
   );
