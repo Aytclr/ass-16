@@ -37,7 +37,7 @@ const Login = () => {
         </div>
         <form 
         onSubmit={handleSubmit}
-        className="flex flex-col text-left p-3 gp-5">
+        className="flex flex-col text-left p-3 gp-5 ">
           <div className="flex flex-col gap-2">
             <label
               className="font-montserrat text-label text-labelColor hover:after:content-['admin@aa.com'] hover:after:text-black hover:after pl-3  hover:after: underline hover:after:cursor-pointer "
@@ -73,7 +73,7 @@ const Login = () => {
               onChange={(e)=>setPass(e.target.value)}
             />
           </div>
-          <button className="bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px]">Sing In</button>
+          <button className=" mt-3 bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px]">Sing In</button>
         <div className="flex justify-center items-center flex-wrap gap-4">
           <span className="text-label font-montserrat font-[400]
           text-labelColor">Forgot your password</span>
