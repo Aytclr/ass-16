@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContex } from "../context/AuthProvider";
 
 const Login = () => {
   const [email,setEmail]=useState("");
   const [pass,setPass]=useState("");
+  const {login} = useContext(AuthContex)
+
 
   const handleSubmit=(e)=>{
     e.preventDefault()
     if (email.toLocaleLowerCase()=== "admin@aa.com" && pass === "admin") {
-      console.log({email,pass});     
+      // console.log({email,pass});  
+      login({email,pass});
     }else{
       alert("Hatalı giriş")}
 
@@ -78,7 +82,7 @@ const Login = () => {
           <span className="text-label font-montserrat font-[400]
           text-labelColor">Forgot your password</span>
           <span className="text-main font-montserrat font-[400]
-          text-slate-800 underline ">Reset Password</span>
+          text-late-800 underline ">Reset Password</span>
         </div>
         </form>
         
