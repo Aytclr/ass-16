@@ -1,6 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Login = () => {
+  const [email,setEmail]=useState("");
+  const [pass,setPass]=useState("");
+
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    if (email.toLocaleLowerCase()=== "admin@aa.com" && pass === "admin") {
+      console.log({email,pass});     
+    }else{
+      alert("Hatalı giriş")}
+
+
+
+    console.log({email,pass});
+  }
+  
+
+
+
+
   return (
     <div className="loginDiv">
       <div className="h-[500px] w-11/12 sm:w-[475px] bg-white rounded-[20px] p-5 flex flex-col justify-center text-center">
@@ -16,7 +35,9 @@ const Login = () => {
             Enter your credetentials to access your account
           </h6>
         </div>
-        <form className="flex flex-col text-left p-3 gp-5">
+        <form 
+        onSubmit={handleSubmit}
+        className="flex flex-col text-left p-3 gp-5">
           <div className="flex flex-col gap-2">
             <label
               className="font-montserrat text-label text-labelColor hover:after:content-['admin@aa.com'] hover:after:text-black hover:after pl-3  hover:after: underline hover:after:cursor-pointer "
@@ -31,6 +52,7 @@ const Login = () => {
               id="Email"
               placeholder="Enter your Email"
               required
+              onChange={(e)=>setEmail(e.target.value)}
             />
           </div>
 
@@ -48,16 +70,18 @@ const Login = () => {
               id="Password"
               placeholder="Enter your Password"
               required
+              onChange={(e)=>setPass(e.target.value)}
             />
           </div>
-        </form>
-        <button className="bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px]">Sing In</button>
+          <button className="bg-main h-[44px] font-montserrat text-label text-white uppercase hover:opacity-90 rounded-[4px]">Sing In</button>
         <div className="flex justify-center items-center flex-wrap gap-4">
           <span className="text-label font-montserrat font-[400]
           text-labelColor">Forgot your password</span>
           <span className="text-main font-montserrat font-[400]
           text-slate-800 underline ">Reset Password</span>
         </div>
+        </form>
+        
       </div>
     </div>
   );
